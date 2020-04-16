@@ -16,8 +16,6 @@ filterCompleted.addEventListener("click", filterTodos);
 filterIncomplete.addEventListener("click", filterTodos);
 
 
-
-
 // FUNCTIONS
 function addTodo(event) {
   event.preventDefault();
@@ -30,7 +28,8 @@ function addTodo(event) {
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
   // Add Todo to Local Storage
-  saveTodosLocal(todoInput.value);
+
+  // saveTodosLocal(todoInput.value);
   // Checkmark Button
   const completedButton = document.createElement('button');
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -92,16 +91,18 @@ function filterTodos(e) {
   })
 }
 
-function saveTodosLocal(todo) {
-  console.log("saveTodosLocal is running and todo is ", todo)
-  // Check if already have things in there
-  let todos = []
-  if (localStorage.getItem("todos") === "null") {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  todos.push(todo);
-  localStorage.setItem("todos", JSON.stringify(todos))
 
-}
+// function saveTodosLocal(todo) {
+//   let todos;
+//   console.log(typeof todo)
+//   // let todos = storedTodos;
+//   console.log("saveTodosLocal is running and todo is ", todo)
+//   // Check if already have things in there
+//   if (localStorage.getItem("todos") === "null") {
+//     todos = [];
+//   } else {
+//     todos = JSON.parse(localStorage.getItem("todos"));
+//   }
+//   todos.push(todo);
+//   localStorage.setItem("todos", JSON.stringify("todos"))
+// }
