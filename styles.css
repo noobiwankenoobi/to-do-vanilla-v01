@@ -105,7 +105,8 @@ form button:hover {
 }
 
 .trash-button {
-  background: #FEC601;
+  /* background: #FEC601; */
+  background: rgb(255, 149, 11);
   /* background: #EA7317; */
 }
 
@@ -144,6 +145,11 @@ form button:hover {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
+}
+
+.select-button {
+  background: #3DA5D9;
+  color: white;
 }
 
 

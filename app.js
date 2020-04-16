@@ -73,6 +73,10 @@ function filterTodos(e) {
     switch (e.target.value) {
       case "all":
         todo.style.display = "flex";
+        // Add classes to filter buttons
+        filterAll.classList.add("select-button");
+        filterCompleted.classList.remove("select-button");
+        filterIncomplete.classList.remove("select-button");
         break;
       case "completed":
         if (todo.classList.contains("completed")) {
@@ -80,6 +84,10 @@ function filterTodos(e) {
         } else {
           todo.style.display = "none";
         }
+        // Filter buttons
+        filterCompleted.classList.add("select-button");
+        filterAll.classList.remove("select-button");
+        filterIncomplete.classList.remove("select-button");
         break;
       case "incomplete":
         if (!todo.classList.contains("completed")) {
@@ -87,6 +95,10 @@ function filterTodos(e) {
         } else {
           todo.style.display = "none";
         }
+        // Filter buttons
+        filterCompleted.classList.remove("select-button");
+        filterAll.classList.remove("select-button");
+        filterIncomplete.classList.add("select-button");
     }
   })
 }
